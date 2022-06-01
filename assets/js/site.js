@@ -1,10 +1,9 @@
 /**
- * TMS Content Management System
- * @version 4.x
- * @author Tập Đoàn TMS Holdings <contact@tms.vn>
- * @copyright (C) 2009-2021 Tập Đoàn TMS Holdings. All rights reserved
- * @license GNU/GPL version 2 or any later version
- * @see https://tms.vn
+ * @Project NUKEVIET 4.x
+ * @Author Tập Đoàn TMS Holdings (contact@tms.vn)
+ * @Copyright (C) 2014 Tập Đoàn TMS Holdings. All rights reserved
+ * @License GNU/GPL version 2 or any later version
+ * @Createdate 19/3/2010 22:58
  */
 
 // Ap dung trinh nghe thu dong cho touchstart
