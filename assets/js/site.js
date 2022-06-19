@@ -1,9 +1,11 @@
+
 /**
- * @Project NUKEVIET 4.x
- * @Author Tập Đoàn TMS Holdings (contact@tms.vn)
- * @Copyright (C) 2014 Tập Đoàn TMS Holdings. All rights reserved
- * @License GNU/GPL version 2 or any later version
- * @Createdate 19/3/2010 22:58
+ * TMS Content Management System
+ * @version 4.x
+ * @author Tập Đoàn TMS Holdings <contact@tms.vn>
+ * @copyright (C) 2009-2021 Tập Đoàn TMS Holdings. All rights reserved
+ * @license GNU/GPL version 2 or any later version
+ * @see https://tms.vn
  */
 
 // Ap dung trinh nghe thu dong cho touchstart
@@ -550,7 +552,10 @@ $(function() {
 
     //XSSsanitize + Captcha
     $('body').on('click', '[type=submit]:not([name])', function(e) {
-        btnClickSubmit(e, $(this).parents('form'))
+        var form = $(this).parents('form');
+        if (!$('[name=submit]', form).length) {
+            btnClickSubmit(e,form)
+        }
     });
 
     // Thay Captcha hình mới

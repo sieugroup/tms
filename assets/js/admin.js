@@ -1,11 +1,12 @@
-/**
- * @Project NUKEVIET 4.x
- * @Author Tập Đoàn TMS Holdings (contact@tms.vn)
- * @Copyright (C) 2014 Tập Đoàn TMS Holdings. All rights reserved
- * @License GNU/GPL version 2 or any later version
- * @Createdate 31/05/2010, 9:36
- */
 
+/**
+ * TMS Content Management System
+ * @version 4.x
+ * @author Tập Đoàn TMS Holdings <contact@tms.vn>
+ * @copyright (C) 2009-2021 Tập Đoàn TMS Holdings. All rights reserved
+ * @license GNU/GPL version 2 or any later version
+ * @see https://tms.vn
+ */
 function nv_admin_logout() {
     confirm(nv_admlogout_confirm[0]) && $.get(nv_base_siteurl + "index.php?second=admin_logout&js=1&nocache=" + (new Date).getTime(), function(b) {
         1 == b && (alert(nv_admlogout_confirm[1]), window.location.href = 1 == nv_area_admin ? nv_base_siteurl : strHref)
