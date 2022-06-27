@@ -1,11 +1,9 @@
-
 /**
- * TMS Content Management System
- * @version 4.x
- * @author Tập Đoàn TMS Holdings <contact@tms.vn>
- * @copyright (C) 2009-2021 Tập Đoàn TMS Holdings. All rights reserved
- * @license GNU/GPL version 2 or any later version
- * @see https://tms.vn
+ * @Project NUKEVIET 4.x
+ * @Author VINADES.,JSC <contact@vinades.vn>
+ * @Copyright (C) 2014 VINADES.,JSC. All rights reserved
+ * @License GNU/GPL version 2 or any later version
+ * @Createdate 27/01/2011, 9:36
  */
 
 var isDebugMode = false;

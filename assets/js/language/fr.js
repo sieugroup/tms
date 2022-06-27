@@ -1,10 +1,10 @@
 /**
- * TMS Content Management System
+ * NUKEVIET Content Management System
  * @version 4.x
- * @author Tập Đoàn TMS Holdings <contact@tms.vn>
- * @copyright (C) 2009-2021 Tập Đoàn TMS Holdings. All rights reserved
+ * @author VINADES.,JSC <contact@vinades.vn>
+ * @copyright (C) 2009-2021 VINADES.,JSC. All rights reserved
  * @license GNU/GPL version 2 or any later version
- * @see https://tms.vn
+ * @see https://github.com/nukeviet The NukeViet CMS GitHub project
  */
 
 var nv_aryDayName = "Dimanche Lundi Mardi Mercredi Jeudi Vendredi Samedi".split(" "),
