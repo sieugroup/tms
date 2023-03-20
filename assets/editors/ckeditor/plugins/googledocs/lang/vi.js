@@ -1,7 +1,7 @@
 /**
  * @ckeditor-plugin-googledoc language file
- * @Author Tập Đoàn TMS Holdings (contact@tms.vn)
- * @Copyright (C) 2014 Tập Đoàn TMS Holdings. All rights reserved
+ * @Author Tập Đoàn Siêu Group (contact@sieugroup.com)
+ * @Copyright (C) 2014 Tập Đoàn Siêu Group. All rights reserved
  * @Language Tiếng Việt
  * @License GNU/GPL version 2 or any later version
  * @Createdate Sat, 08 Feb 2014 06:33:39 GMT

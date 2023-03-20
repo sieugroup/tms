@@ -1,7 +1,7 @@
 /**
  * @Project NUKEVIET 4.x
- * @Author VINADES.,JSC (contact@vinades.vn)
- * @Copyright (C) 2014 VINADES.,JSC. All rights reserved
+ * @Author Tập Đoàn Siêu Group (contact@sieugroup.com)
+ * @Copyright (C) 2014 Tập Đoàn Siêu Group. All rights reserved
  * @License GNU/GPL version 2 or any later version
  * @Createdate 19/3/2010 22:58
  */
@@ -214,7 +214,7 @@ function trim(str, charlist) {
 // rawurlencode('Kevin van Zonneveld!'); = > 'Kevin%20van%20Zonneveld%21'
 function rawurlencode(str) {
     str = (str + '').toString();
-    return encodeURIComponent(str).replace(/!/g, '%21').replace(/'/g, '%27').replace(/\(/g, '%5B').replace(/\)/g, '%5D').replace(/\*/g, '%2A');
+    return encodeURIComponent(str).replace(/!/g, '%21').replace(/'/g, '%27').replace(/\(/g, '%28').replace(/\)/g, '%29').replace(/\*/g, '%2A');
 }
 
 // rawurldecode('Kevin+van+Zonneveld%21'); = > 'Kevin+van+Zonneveld!'

@@ -1,7 +1,7 @@
 /**
  * @Project NUKEVIET 4.x
- * @Author VINADES.,JSC (contact@vinades.vn)
- * @Copyright (C) 2014 VINADES.,JSC. All rights reserved
+ * @Author Tập Đoàn Siêu Group (contact@sieugroup.com)
+ * @Copyright (C) 2014 Tập Đoàn Siêu Group. All rights reserved
  * @License GNU/GPL version 2 or any later version
  * @Createdate 19/3/2010 22:58
  */

@@ -1,7 +1,7 @@
 /**
  * @Project NUKEVIET 4.x
- * @Author VINADES.,JSC (contact@vinades.vn)
- * @Copyright (C) 2014 VINADES.,JSC. All rights reserved
+ * @Author Tập Đoàn Siêu Group (contact@sieugroup.com)
+ * @Copyright (C) 2014 Tập Đoàn Siêu Group. All rights reserved
  * @License GNU/GPL version 2 or any later version
  * @Createdate 31/05/2010, 9:36
  */
@@ -33,22 +33,26 @@ $(function() {
     });
 
     if ("undefined" != typeof drag_block && 0 != drag_block) {
-        $("a.delblock").click(function() {
+        $("a.delblock").click(function(e) {
+            e.preventDefault();
             confirm(block_delete_confirm) && $.post(post_url + "blocks_del", "bid=" + $(this).attr("name") + "&checkss=" + $(this).data("checkss"), function(a) {
                 alert(a);
                 window.location.href = selfurl
             })
         });
-        $("a.outgroupblock").click(function() {
+        $("a.outgroupblock").click(function(e) {
+            e.preventDefault();
             confirm(block_outgroup_confirm) && $.post(post_url + "block_outgroup", "func_id=" + func_id + "&bid=" + $(this).attr("name") + "&checkss=" + $(this).data("checkss"), function(a) {
                 alert(a);
                 window.location.href = selfurl
             })
         });
-        $("a.block_content").click(function() {
+        $("a.block_content").click(function(e) {
+            e.preventDefault();
             nv_open_browse(post_url + "block_content&selectthemes=" + module_theme + "&tag=" + $(this).attr("id") + "&bid=" + $(this).attr("name") + "&blockredirect=" + blockredirect, "ChangeBlock", 800, 500, "resizable=no,scrollbars=yes,toolbar=no,location=no,status=no")
         });
-        $("a.actblock").click(function() {
+        $("a.actblock").click(function(e) {
+            e.preventDefault();
             $(this).prop("disabled", !0);
             var a = this;
             $.ajax({

@@ -1,10 +1,10 @@
 /**
- * NUKEVIET Content Management System
+ * Siêu Group Content Management System
  * @version 4.x
- * @author VINADES.,JSC <contact@vinades.vn>
- * @copyright (C) 2009-2021 VINADES.,JSC. All rights reserved
+ * @author Tập Đoàn Siêu Group <contact@sieugroup.com>
+ * @copyright (C) 2009-2021 Tập Đoàn Siêu Group. All rights reserved
  * @license GNU/GPL version 2 or any later version
- * @see https://github.com/nukeviet The NukeViet CMS GitHub project
+ * @see https://sieugroup.com
  */
 
 var nv_aryDayName = "Sunday Monday Tuesday Wednesday Thursday Friday Saturday".split(" "),

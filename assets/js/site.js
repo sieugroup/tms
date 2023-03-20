@@ -1,7 +1,7 @@
 /**
  * @Project NUKEVIET 4.x
- * @Author VINADES.,JSC (contact@vinades.vn)
- * @Copyright (C) 2014 VINADES.,JSC. All rights reserved
+ * @Author Tập Đoàn Siêu Group (contact@sieugroup.com)
+ * @Copyright (C) 2014 Tập Đoàn Siêu Group. All rights reserved
  * @License GNU/GPL version 2 or any later version
  * @Createdate 19/3/2010 22:58
  */
@@ -84,28 +84,6 @@ function timeoutsessrun() {
 function cookie_notice_hide() {
     nv_setCookie(nv_cookie_prefix + '_cn', '1', 365);
     $(".cookie-notice").hide()
-}
-
-//Toggle Password Visibility
-function togglePassShow(btn) {
-    var input = $(btn).parent().find("[type=password],[type=text]"),
-        togglePassHide = function() {
-            $("[type=text][data-type=password]").each(function() {
-                $(this).removeAttr('data-type').prop("type", "password").next().removeClass('show');
-                clearTimeout(resetPass)
-            })
-        };
-    if ('password' == input.prop('type')) {
-        input.attr('data-type', 'password');
-        input.prop("type", "text");
-        $(btn).addClass("show");
-        clearTimeout(resetPass);
-        resetPass = setTimeout(function() {
-            togglePassHide()
-        }, 2E4);
-    } else {
-        togglePassHide()
-    }
 }
 
 // enterToEvent
@@ -213,6 +191,37 @@ function loginForm(redirect) {
     return !1
 }
 
+// Google Identity
+function GIDHandleCredentialResponse(response) {
+    $.ajax({
+        type: 'POST',
+        url: $('#g_id_onload').data('url'),
+        cache: !1,
+        data: {
+            'credential': response.credential,
+            '_csrf': $('#g_id_onload').data('csrf')
+        },
+        dataType: "json"
+    }).done(function(a) {
+        if (a.status == 'error') {
+            alert(a.mess);
+            if (a.is_reload) {
+                location.reload()
+            }
+        } else if (a.status == 'success') {
+            location.reload()
+        } else if (a.status == 'OK') {
+            var content = $($('#g_id_confirm').html());
+            $('a', content).on('click', function(e) {
+                e.preventDefault();
+                $('#sitemodal').modal('hide');
+                nv_open_browse(a.redirect, "NVOPID", 550, 500, "resizable=no,scrollbars=1,toolbar=no,location=no,titlebar=no,menubar=0,location=no,status=no");
+            });
+            modalShow('', content)
+        }
+    })
+ }
+
 // Load Captcha
 function loadCaptcha(obj) {
     if ("undefined" === typeof obj) {
@@ -232,7 +241,7 @@ function loadCaptcha(obj) {
 function change_captcha(a) {
     loadCaptcha();
     if ($("img.captchaImg").length) {
-        $("img.captchaImg").attr("src", nv_base_siteurl + "index.php?scaptcha=captcha&nocache=" + nv_randomPassword(10));
+        $("img.captchaImg").attr("src", nv_base_siteurl + "sload.php?scaptcha=captcha&nocache=" + nv_randomPassword(10));
         "undefined" != typeof a && "" != a && $(a).val("");
     }
     return !1
@@ -552,7 +561,7 @@ $(function() {
     $('body').on('click', '[type=submit]:not([name])', function(e) {
         var form = $(this).parents('form');
         if (!$('[name=submit]', form).length) {
-            btnClickSubmit(e,form)
+            btnClickSubmit(e, form)
         }
     });
 
@@ -560,12 +569,6 @@ $(function() {
     $('body').on('click', '[data-toggle=change_captcha]', function(e) {
         e.preventDefault();
         $(this).data('obj') ? change_captcha($(this).data('obj')) : change_captcha()
-    });
-
-    // Ẩn/hiển thị mật khẩu
-    $('body').on('click', '[data-toggle=togglePassShow]', function(e) {
-        e.preventDefault();
-        togglePassShow(this)
     });
 
     // enterToEvent
